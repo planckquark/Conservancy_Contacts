@@ -52,6 +52,22 @@
         <script src="data/YellowwoodConserancy_19.js"></script>
         <script src="data/ZinkwaziConservancy_20.js"></script>
         <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString') {
+              highlightLayer.setStyle({
+                color: '#ffff00',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: '#ffff00',
+                fillOpacity: 1
+              });
+            }
+            highlightLayer.openPopup();
+        }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
         }).fitBounds([[-30.9626180533,28.1931959051],[-28.5459554801,32.0887916717]]);
@@ -66,6 +82,21 @@
         function setBounds() {
         }
         function pop_BendigoConservancy_0(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -103,6 +134,21 @@
         bounds_group.addLayer(layer_BendigoConservancy_0);
         map.addLayer(layer_BendigoConservancy_0);
         function pop_CavershamConservancy_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -140,6 +186,21 @@
         bounds_group.addLayer(layer_CavershamConservancy_1);
         map.addLayer(layer_CavershamConservancy_1);
         function pop_ClansthalConservancy_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -177,6 +238,21 @@
         bounds_group.addLayer(layer_ClansthalConservancy_2);
         map.addLayer(layer_ClansthalConservancy_2);
         function pop_CrownedEagleConservancy_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -214,6 +290,21 @@
         bounds_group.addLayer(layer_CrownedEagleConservancy_3);
         map.addLayer(layer_CrownedEagleConservancy_3);
         function pop_DrummondConservancy_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -251,6 +342,21 @@
         bounds_group.addLayer(layer_DrummondConservancy_4);
         map.addLayer(layer_DrummondConservancy_4);
         function pop_EvertonConservancy_5(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -288,6 +394,21 @@
         bounds_group.addLayer(layer_EvertonConservancy_5);
         map.addLayer(layer_EvertonConservancy_5);
         function pop_GillittsConservancy_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -325,6 +446,21 @@
         bounds_group.addLayer(layer_GillittsConservancy_6);
         map.addLayer(layer_GillittsConservancy_6);
         function pop_HillcrestConservancy_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -362,6 +498,21 @@
         bounds_group.addLayer(layer_HillcrestConservancy_7);
         map.addLayer(layer_HillcrestConservancy_7);
         function pop_KeepHillcrestBeautifulConservancy_8(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -399,6 +550,21 @@
         bounds_group.addLayer(layer_KeepHillcrestBeautifulConservancy_8);
         map.addLayer(layer_KeepHillcrestBeautifulConservancy_8);
         function pop_LionsBushConservancy_9(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -436,6 +602,21 @@
         bounds_group.addLayer(layer_LionsBushConservancy_9);
         map.addLayer(layer_LionsBushConservancy_9);
         function pop_MonteseelConservancy_10(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -473,6 +654,21 @@
         bounds_group.addLayer(layer_MonteseelConservancy_10);
         map.addLayer(layer_MonteseelConservancy_10);
         function pop_MountMorelandConservancy_11(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -510,6 +706,21 @@
         bounds_group.addLayer(layer_MountMorelandConservancy_11);
         map.addLayer(layer_MountMorelandConservancy_11);
         function pop_MpunginiConservancy_12(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -547,6 +758,21 @@
         bounds_group.addLayer(layer_MpunginiConservancy_12);
         map.addLayer(layer_MpunginiConservancy_12);
         function pop_RosettaNottinghamRoadConservancy_13(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -584,6 +810,21 @@
         bounds_group.addLayer(layer_RosettaNottinghamRoadConservancy_13);
         map.addLayer(layer_RosettaNottinghamRoadConservancy_13);
         function pop_ShongweniConservancy_14(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -621,6 +862,21 @@
         bounds_group.addLayer(layer_ShongweniConservancy_14);
         map.addLayer(layer_ShongweniConservancy_14);
         function pop_uMngeniEstuaryConservancy_15(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -658,6 +914,21 @@
         bounds_group.addLayer(layer_uMngeniEstuaryConservancy_15);
         map.addLayer(layer_uMngeniEstuaryConservancy_15);
         function pop_uThekwaneConservancy_16(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -695,6 +966,21 @@
         bounds_group.addLayer(layer_uThekwaneConservancy_16);
         map.addLayer(layer_uThekwaneConservancy_16);
         function pop_WinterskloofConservancy_17(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -732,6 +1018,21 @@
         bounds_group.addLayer(layer_WinterskloofConservancy_17);
         map.addLayer(layer_WinterskloofConservancy_17);
         function pop_WorldsViewConservancy_18(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -769,6 +1070,21 @@
         bounds_group.addLayer(layer_WorldsViewConservancy_18);
         map.addLayer(layer_WorldsViewConservancy_18);
         function pop_YellowwoodConserancy_19(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -806,6 +1122,21 @@
         bounds_group.addLayer(layer_YellowwoodConserancy_19);
         map.addLayer(layer_YellowwoodConserancy_19);
         function pop_ZinkwaziConservancy_20(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
@@ -842,6 +1173,8 @@
         });
         bounds_group.addLayer(layer_ZinkwaziConservancy_20);
         map.addLayer(layer_ZinkwaziConservancy_20);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/ZinkwaziConservancy_20.png" /> Zinkwazi Conservancy': layer_ZinkwaziConservancy_20,'<img src="legend/YellowwoodConserancy_19.png" /> Yellowwood Conserancy': layer_YellowwoodConserancy_19,'<img src="legend/WorldsViewConservancy_18.png" /> Worlds View Conservancy': layer_WorldsViewConservancy_18,'<img src="legend/WinterskloofConservancy_17.png" /> Winterskloof Conservancy': layer_WinterskloofConservancy_17,'<img src="legend/uThekwaneConservancy_16.png" /> uThekwane Conservancy': layer_uThekwaneConservancy_16,'<img src="legend/uMngeniEstuaryConservancy_15.png" /> uMngeni Estuary Conservancy': layer_uMngeniEstuaryConservancy_15,'<img src="legend/ShongweniConservancy_14.png" /> Shongweni Conservancy': layer_ShongweniConservancy_14,'<img src="legend/RosettaNottinghamRoadConservancy_13.png" /> Rosetta Nottingham Road Conservancy': layer_RosettaNottinghamRoadConservancy_13,'<img src="legend/MpunginiConservancy_12.png" /> Mpungini Conservancy': layer_MpunginiConservancy_12,'<img src="legend/MountMorelandConservancy_11.png" /> Mount Moreland Conservancy': layer_MountMorelandConservancy_11,'<img src="legend/MonteseelConservancy_10.png" /> Monteseel Conservancy': layer_MonteseelConservancy_10,'<img src="legend/LionsBushConservancy_9.png" /> Lions Bush Conservancy': layer_LionsBushConservancy_9,'<img src="legend/KeepHillcrestBeautifulConservancy_8.png" /> Keep Hillcrest Beautiful Conservancy': layer_KeepHillcrestBeautifulConservancy_8,'<img src="legend/HillcrestConservancy_7.png" /> Hillcrest Conservancy': layer_HillcrestConservancy_7,'<img src="legend/GillittsConservancy_6.png" /> Gillitts Conservancy': layer_GillittsConservancy_6,'<img src="legend/EvertonConservancy_5.png" /> Everton Conservancy': layer_EvertonConservancy_5,'<img src="legend/DrummondConservancy_4.png" /> Drummond Conservancy': layer_DrummondConservancy_4,'<img src="legend/CrownedEagleConservancy_3.png" /> Crowned Eagle Conservancy': layer_CrownedEagleConservancy_3,'<img src="legend/ClansthalConservancy_2.png" /> Clansthal Conservancy': layer_ClansthalConservancy_2,'<img src="legend/CavershamConservancy_1.png" /> Caversham Conservancy': layer_CavershamConservancy_1,'<img src="legend/BendigoConservancy_0.png" /> Bendigo Conservancy': layer_BendigoConservancy_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
