@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/BendigoConservancy_0.js"></script>
+        <script src="data/CavershamConservancy_1.js"></script>
+        <script src="data/ClansthalConservancy_2.js"></script>
+        <script src="data/CrownedEagleConservancy_3.js"></script>
+        <script src="data/DrummondConservancy_4.js"></script>
+        <script src="data/EvertonConservancy_5.js"></script>
+        <script src="data/GillittsConservancy_6.js"></script>
+        <script src="data/HillcrestConservancy_7.js"></script>
+        <script src="data/KeepHillcrestBeautifulConservancy_8.js"></script>
+        <script src="data/LionsBushConservancy_9.js"></script>
+        <script src="data/MonteseelConservancy_10.js"></script>
+        <script src="data/MountMorelandConservancy_11.js"></script>
+        <script src="data/MpunginiConservancy_12.js"></script>
+        <script src="data/RosettaNottinghamRoadConservancy_13.js"></script>
+        <script src="data/ShongweniConservancy_14.js"></script>
+        <script src="data/uMngeniEstuaryConservancy_15.js"></script>
+        <script src="data/uThekwaneConservancy_16.js"></script>
+        <script src="data/WinterskloofConservancy_17.js"></script>
+        <script src="data/WorldsViewConservancy_18.js"></script>
+        <script src="data/YellowwoodConserancy_19.js"></script>
+        <script src="data/ZinkwaziConservancy_20.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[-30.9626180533,28.1931959051],[-28.5459554801,32.0887916717]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 28
+        });
+        basemap0.addTo(map);
+        function setBounds() {
+        }
+        function pop_BendigoConservancy_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_BendigoConservancy_0_0() {
+            return {
+                pane: 'pane_BendigoConservancy_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,67,70,0.4)',
+            }
+        }
+        map.createPane('pane_BendigoConservancy_0');
+        map.getPane('pane_BendigoConservancy_0').style.zIndex = 400;
+        map.getPane('pane_BendigoConservancy_0').style['mix-blend-mode'] = 'normal';
+        var layer_BendigoConservancy_0 = new L.geoJson(json_BendigoConservancy_0, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_BendigoConservancy_0',
+            onEachFeature: pop_BendigoConservancy_0,
+            style: style_BendigoConservancy_0_0,
+        });
+        bounds_group.addLayer(layer_BendigoConservancy_0);
+        map.addLayer(layer_BendigoConservancy_0);
+        function pop_CavershamConservancy_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_CavershamConservancy_1_0() {
+            return {
+                pane: 'pane_CavershamConservancy_1',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(73,180,125,0.4)',
+            }
+        }
+        map.createPane('pane_CavershamConservancy_1');
+        map.getPane('pane_CavershamConservancy_1').style.zIndex = 401;
+        map.getPane('pane_CavershamConservancy_1').style['mix-blend-mode'] = 'normal';
+        var layer_CavershamConservancy_1 = new L.geoJson(json_CavershamConservancy_1, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_CavershamConservancy_1',
+            onEachFeature: pop_CavershamConservancy_1,
+            style: style_CavershamConservancy_1_0,
+        });
+        bounds_group.addLayer(layer_CavershamConservancy_1);
+        map.addLayer(layer_CavershamConservancy_1);
+        function pop_ClansthalConservancy_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ClansthalConservancy_2_0() {
+            return {
+                pane: 'pane_ClansthalConservancy_2',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(167,124,172,0.4)',
+            }
+        }
+        map.createPane('pane_ClansthalConservancy_2');
+        map.getPane('pane_ClansthalConservancy_2').style.zIndex = 402;
+        map.getPane('pane_ClansthalConservancy_2').style['mix-blend-mode'] = 'normal';
+        var layer_ClansthalConservancy_2 = new L.geoJson(json_ClansthalConservancy_2, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_ClansthalConservancy_2',
+            onEachFeature: pop_ClansthalConservancy_2,
+            style: style_ClansthalConservancy_2_0,
+        });
+        bounds_group.addLayer(layer_ClansthalConservancy_2);
+        map.addLayer(layer_ClansthalConservancy_2);
+        function pop_CrownedEagleConservancy_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_CrownedEagleConservancy_3_0() {
+            return {
+                pane: 'pane_CrownedEagleConservancy_3',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(204,225,140,0.4)',
+            }
+        }
+        map.createPane('pane_CrownedEagleConservancy_3');
+        map.getPane('pane_CrownedEagleConservancy_3').style.zIndex = 403;
+        map.getPane('pane_CrownedEagleConservancy_3').style['mix-blend-mode'] = 'normal';
+        var layer_CrownedEagleConservancy_3 = new L.geoJson(json_CrownedEagleConservancy_3, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_CrownedEagleConservancy_3',
+            onEachFeature: pop_CrownedEagleConservancy_3,
+            style: style_CrownedEagleConservancy_3_0,
+        });
+        bounds_group.addLayer(layer_CrownedEagleConservancy_3);
+        map.addLayer(layer_CrownedEagleConservancy_3);
+        function pop_DrummondConservancy_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_DrummondConservancy_4_0() {
+            return {
+                pane: 'pane_DrummondConservancy_4',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(160,225,231,0.4)',
+            }
+        }
+        map.createPane('pane_DrummondConservancy_4');
+        map.getPane('pane_DrummondConservancy_4').style.zIndex = 404;
+        map.getPane('pane_DrummondConservancy_4').style['mix-blend-mode'] = 'normal';
+        var layer_DrummondConservancy_4 = new L.geoJson(json_DrummondConservancy_4, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_DrummondConservancy_4',
+            onEachFeature: pop_DrummondConservancy_4,
+            style: style_DrummondConservancy_4_0,
+        });
+        bounds_group.addLayer(layer_DrummondConservancy_4);
+        map.addLayer(layer_DrummondConservancy_4);
+        function pop_EvertonConservancy_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_EvertonConservancy_5_0() {
+            return {
+                pane: 'pane_EvertonConservancy_5',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(173,124,40,0.4)',
+            }
+        }
+        map.createPane('pane_EvertonConservancy_5');
+        map.getPane('pane_EvertonConservancy_5').style.zIndex = 405;
+        map.getPane('pane_EvertonConservancy_5').style['mix-blend-mode'] = 'normal';
+        var layer_EvertonConservancy_5 = new L.geoJson(json_EvertonConservancy_5, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_EvertonConservancy_5',
+            onEachFeature: pop_EvertonConservancy_5,
+            style: style_EvertonConservancy_5_0,
+        });
+        bounds_group.addLayer(layer_EvertonConservancy_5);
+        map.addLayer(layer_EvertonConservancy_5);
+        function pop_GillittsConservancy_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_GillittsConservancy_6_0() {
+            return {
+                pane: 'pane_GillittsConservancy_6',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,193,166,0.4)',
+            }
+        }
+        map.createPane('pane_GillittsConservancy_6');
+        map.getPane('pane_GillittsConservancy_6').style.zIndex = 406;
+        map.getPane('pane_GillittsConservancy_6').style['mix-blend-mode'] = 'normal';
+        var layer_GillittsConservancy_6 = new L.geoJson(json_GillittsConservancy_6, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_GillittsConservancy_6',
+            onEachFeature: pop_GillittsConservancy_6,
+            style: style_GillittsConservancy_6_0,
+        });
+        bounds_group.addLayer(layer_GillittsConservancy_6);
+        map.addLayer(layer_GillittsConservancy_6);
+        function pop_HillcrestConservancy_7(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_HillcrestConservancy_7_0() {
+            return {
+                pane: 'pane_HillcrestConservancy_7',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(117,142,174,0.4)',
+            }
+        }
+        map.createPane('pane_HillcrestConservancy_7');
+        map.getPane('pane_HillcrestConservancy_7').style.zIndex = 407;
+        map.getPane('pane_HillcrestConservancy_7').style['mix-blend-mode'] = 'normal';
+        var layer_HillcrestConservancy_7 = new L.geoJson(json_HillcrestConservancy_7, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_HillcrestConservancy_7',
+            onEachFeature: pop_HillcrestConservancy_7,
+            style: style_HillcrestConservancy_7_0,
+        });
+        bounds_group.addLayer(layer_HillcrestConservancy_7);
+        map.addLayer(layer_HillcrestConservancy_7);
+        function pop_KeepHillcrestBeautifulConservancy_8(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_KeepHillcrestBeautifulConservancy_8_0() {
+            return {
+                pane: 'pane_KeepHillcrestBeautifulConservancy_8',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(15,224,251,0.4)',
+            }
+        }
+        map.createPane('pane_KeepHillcrestBeautifulConservancy_8');
+        map.getPane('pane_KeepHillcrestBeautifulConservancy_8').style.zIndex = 408;
+        map.getPane('pane_KeepHillcrestBeautifulConservancy_8').style['mix-blend-mode'] = 'normal';
+        var layer_KeepHillcrestBeautifulConservancy_8 = new L.geoJson(json_KeepHillcrestBeautifulConservancy_8, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_KeepHillcrestBeautifulConservancy_8',
+            onEachFeature: pop_KeepHillcrestBeautifulConservancy_8,
+            style: style_KeepHillcrestBeautifulConservancy_8_0,
+        });
+        bounds_group.addLayer(layer_KeepHillcrestBeautifulConservancy_8);
+        map.addLayer(layer_KeepHillcrestBeautifulConservancy_8);
+        function pop_LionsBushConservancy_9(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_LionsBushConservancy_9_0() {
+            return {
+                pane: 'pane_LionsBushConservancy_9',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(140,31,146,0.4)',
+            }
+        }
+        map.createPane('pane_LionsBushConservancy_9');
+        map.getPane('pane_LionsBushConservancy_9').style.zIndex = 409;
+        map.getPane('pane_LionsBushConservancy_9').style['mix-blend-mode'] = 'normal';
+        var layer_LionsBushConservancy_9 = new L.geoJson(json_LionsBushConservancy_9, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_LionsBushConservancy_9',
+            onEachFeature: pop_LionsBushConservancy_9,
+            style: style_LionsBushConservancy_9_0,
+        });
+        bounds_group.addLayer(layer_LionsBushConservancy_9);
+        map.addLayer(layer_LionsBushConservancy_9);
+        function pop_MonteseelConservancy_10(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_MonteseelConservancy_10_0() {
+            return {
+                pane: 'pane_MonteseelConservancy_10',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(97,136,74,0.4)',
+            }
+        }
+        map.createPane('pane_MonteseelConservancy_10');
+        map.getPane('pane_MonteseelConservancy_10').style.zIndex = 410;
+        map.getPane('pane_MonteseelConservancy_10').style['mix-blend-mode'] = 'normal';
+        var layer_MonteseelConservancy_10 = new L.geoJson(json_MonteseelConservancy_10, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_MonteseelConservancy_10',
+            onEachFeature: pop_MonteseelConservancy_10,
+            style: style_MonteseelConservancy_10_0,
+        });
+        bounds_group.addLayer(layer_MonteseelConservancy_10);
+        map.addLayer(layer_MonteseelConservancy_10);
+        function pop_MountMorelandConservancy_11(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_MountMorelandConservancy_11_0() {
+            return {
+                pane: 'pane_MountMorelandConservancy_11',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(144,72,45,0.4)',
+            }
+        }
+        map.createPane('pane_MountMorelandConservancy_11');
+        map.getPane('pane_MountMorelandConservancy_11').style.zIndex = 411;
+        map.getPane('pane_MountMorelandConservancy_11').style['mix-blend-mode'] = 'normal';
+        var layer_MountMorelandConservancy_11 = new L.geoJson(json_MountMorelandConservancy_11, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_MountMorelandConservancy_11',
+            onEachFeature: pop_MountMorelandConservancy_11,
+            style: style_MountMorelandConservancy_11_0,
+        });
+        bounds_group.addLayer(layer_MountMorelandConservancy_11);
+        map.addLayer(layer_MountMorelandConservancy_11);
+        function pop_MpunginiConservancy_12(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_MpunginiConservancy_12_0() {
+            return {
+                pane: 'pane_MpunginiConservancy_12',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(23,83,187,0.4)',
+            }
+        }
+        map.createPane('pane_MpunginiConservancy_12');
+        map.getPane('pane_MpunginiConservancy_12').style.zIndex = 412;
+        map.getPane('pane_MpunginiConservancy_12').style['mix-blend-mode'] = 'normal';
+        var layer_MpunginiConservancy_12 = new L.geoJson(json_MpunginiConservancy_12, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_MpunginiConservancy_12',
+            onEachFeature: pop_MpunginiConservancy_12,
+            style: style_MpunginiConservancy_12_0,
+        });
+        bounds_group.addLayer(layer_MpunginiConservancy_12);
+        map.addLayer(layer_MpunginiConservancy_12);
+        function pop_RosettaNottinghamRoadConservancy_13(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_RosettaNottinghamRoadConservancy_13_0() {
+            return {
+                pane: 'pane_RosettaNottinghamRoadConservancy_13',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,69,123,0.4)',
+            }
+        }
+        map.createPane('pane_RosettaNottinghamRoadConservancy_13');
+        map.getPane('pane_RosettaNottinghamRoadConservancy_13').style.zIndex = 413;
+        map.getPane('pane_RosettaNottinghamRoadConservancy_13').style['mix-blend-mode'] = 'normal';
+        var layer_RosettaNottinghamRoadConservancy_13 = new L.geoJson(json_RosettaNottinghamRoadConservancy_13, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_RosettaNottinghamRoadConservancy_13',
+            onEachFeature: pop_RosettaNottinghamRoadConservancy_13,
+            style: style_RosettaNottinghamRoadConservancy_13_0,
+        });
+        bounds_group.addLayer(layer_RosettaNottinghamRoadConservancy_13);
+        map.addLayer(layer_RosettaNottinghamRoadConservancy_13);
+        function pop_ShongweniConservancy_14(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ShongweniConservancy_14_0() {
+            return {
+                pane: 'pane_ShongweniConservancy_14',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(74,161,128,0.4)',
+            }
+        }
+        map.createPane('pane_ShongweniConservancy_14');
+        map.getPane('pane_ShongweniConservancy_14').style.zIndex = 414;
+        map.getPane('pane_ShongweniConservancy_14').style['mix-blend-mode'] = 'normal';
+        var layer_ShongweniConservancy_14 = new L.geoJson(json_ShongweniConservancy_14, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_ShongweniConservancy_14',
+            onEachFeature: pop_ShongweniConservancy_14,
+            style: style_ShongweniConservancy_14_0,
+        });
+        bounds_group.addLayer(layer_ShongweniConservancy_14);
+        map.addLayer(layer_ShongweniConservancy_14);
+        function pop_uMngeniEstuaryConservancy_15(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_uMngeniEstuaryConservancy_15_0() {
+            return {
+                pane: 'pane_uMngeniEstuaryConservancy_15',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(142,239,115,0.4)',
+            }
+        }
+        map.createPane('pane_uMngeniEstuaryConservancy_15');
+        map.getPane('pane_uMngeniEstuaryConservancy_15').style.zIndex = 415;
+        map.getPane('pane_uMngeniEstuaryConservancy_15').style['mix-blend-mode'] = 'normal';
+        var layer_uMngeniEstuaryConservancy_15 = new L.geoJson(json_uMngeniEstuaryConservancy_15, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_uMngeniEstuaryConservancy_15',
+            onEachFeature: pop_uMngeniEstuaryConservancy_15,
+            style: style_uMngeniEstuaryConservancy_15_0,
+        });
+        bounds_group.addLayer(layer_uMngeniEstuaryConservancy_15);
+        map.addLayer(layer_uMngeniEstuaryConservancy_15);
+        function pop_uThekwaneConservancy_16(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_uThekwaneConservancy_16_0() {
+            return {
+                pane: 'pane_uThekwaneConservancy_16',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(180,95,80,0.4)',
+            }
+        }
+        map.createPane('pane_uThekwaneConservancy_16');
+        map.getPane('pane_uThekwaneConservancy_16').style.zIndex = 416;
+        map.getPane('pane_uThekwaneConservancy_16').style['mix-blend-mode'] = 'normal';
+        var layer_uThekwaneConservancy_16 = new L.geoJson(json_uThekwaneConservancy_16, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_uThekwaneConservancy_16',
+            onEachFeature: pop_uThekwaneConservancy_16,
+            style: style_uThekwaneConservancy_16_0,
+        });
+        bounds_group.addLayer(layer_uThekwaneConservancy_16);
+        map.addLayer(layer_uThekwaneConservancy_16);
+        function pop_WinterskloofConservancy_17(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_WinterskloofConservancy_17_0() {
+            return {
+                pane: 'pane_WinterskloofConservancy_17',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,199,187,0.4)',
+            }
+        }
+        map.createPane('pane_WinterskloofConservancy_17');
+        map.getPane('pane_WinterskloofConservancy_17').style.zIndex = 417;
+        map.getPane('pane_WinterskloofConservancy_17').style['mix-blend-mode'] = 'normal';
+        var layer_WinterskloofConservancy_17 = new L.geoJson(json_WinterskloofConservancy_17, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_WinterskloofConservancy_17',
+            onEachFeature: pop_WinterskloofConservancy_17,
+            style: style_WinterskloofConservancy_17_0,
+        });
+        bounds_group.addLayer(layer_WinterskloofConservancy_17);
+        map.addLayer(layer_WinterskloofConservancy_17);
+        function pop_WorldsViewConservancy_18(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_WorldsViewConservancy_18_0() {
+            return {
+                pane: 'pane_WorldsViewConservancy_18',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(39,104,134,0.4)',
+            }
+        }
+        map.createPane('pane_WorldsViewConservancy_18');
+        map.getPane('pane_WorldsViewConservancy_18').style.zIndex = 418;
+        map.getPane('pane_WorldsViewConservancy_18').style['mix-blend-mode'] = 'normal';
+        var layer_WorldsViewConservancy_18 = new L.geoJson(json_WorldsViewConservancy_18, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_WorldsViewConservancy_18',
+            onEachFeature: pop_WorldsViewConservancy_18,
+            style: style_WorldsViewConservancy_18_0,
+        });
+        bounds_group.addLayer(layer_WorldsViewConservancy_18);
+        map.addLayer(layer_WorldsViewConservancy_18);
+        function pop_YellowwoodConserancy_19(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_YellowwoodConserancy_19_0() {
+            return {
+                pane: 'pane_YellowwoodConserancy_19',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(193,127,83,0.4)',
+            }
+        }
+        map.createPane('pane_YellowwoodConserancy_19');
+        map.getPane('pane_YellowwoodConserancy_19').style.zIndex = 419;
+        map.getPane('pane_YellowwoodConserancy_19').style['mix-blend-mode'] = 'normal';
+        var layer_YellowwoodConserancy_19 = new L.geoJson(json_YellowwoodConserancy_19, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_YellowwoodConserancy_19',
+            onEachFeature: pop_YellowwoodConserancy_19,
+            style: style_YellowwoodConserancy_19_0,
+        });
+        bounds_group.addLayer(layer_YellowwoodConserancy_19);
+        map.addLayer(layer_YellowwoodConserancy_19);
+        function pop_ZinkwaziConservancy_20(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CONSERVANC'] !== null ? Autolinker.link(String(feature.properties['CONSERVANC'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Contact'] !== null ? Autolinker.link(String(feature.properties['Contact'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ZinkwaziConservancy_20_0() {
+            return {
+                pane: 'pane_ZinkwaziConservancy_20',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.4)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(106,42,173,0.4)',
+            }
+        }
+        map.createPane('pane_ZinkwaziConservancy_20');
+        map.getPane('pane_ZinkwaziConservancy_20').style.zIndex = 420;
+        map.getPane('pane_ZinkwaziConservancy_20').style['mix-blend-mode'] = 'normal';
+        var layer_ZinkwaziConservancy_20 = new L.geoJson(json_ZinkwaziConservancy_20, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_ZinkwaziConservancy_20',
+            onEachFeature: pop_ZinkwaziConservancy_20,
+            style: style_ZinkwaziConservancy_20_0,
+        });
+        bounds_group.addLayer(layer_ZinkwaziConservancy_20);
+        map.addLayer(layer_ZinkwaziConservancy_20);
+        setBounds();
+        </script>
+    </body>
+</html>
